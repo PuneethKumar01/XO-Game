@@ -5,9 +5,19 @@
 }
 
 body {
-    padding: 100px 0px 100px 0px;
-    height: 100%;
+    padding: 75px 0px 100px 0px;
+    height: 100vh;
     background-color: #303035;
+}
+
+h1 {
+    font-size: 60px;
+    color: white;
+    font-family: Arial, Helvetica, sans-serif;
+    position: fixed;
+    top: 1%;
+    left: 1%;
+
 }
 
 .container {
@@ -100,23 +110,7 @@ body {
     transform: rotate(135deg);
 }
 
-#winner {
-    height: 200px;
-    width: 300px;
-    transform: translate(-50%, -50%);
-    background-color: #757575;
-    position: absolute;
-    z-index: 1;
-    top: 50%;
-    left: 50%;
-    border-radius: 10px;
-    box-shadow: 0 0 10px black;
-    display: none;
-    font-size: 25px;
-    color: white;
-    text-align: center;
-    padding: 50px;
-}
+
 
 .score {
     width: 100%;
@@ -167,29 +161,93 @@ body {
 .playerO-color {
     background-color: rgb(70, 179, 223);
 }
-.won{
+
+.won {
     height: 100px;
     width: 150px;
-    border: solid;
+    border: solid 4px;
     position: absolute;
     bottom: 100%;
     padding-top: 10px;
     font-size: 25px;
     border-radius: 5px;
     background-color: #242428;
-    box-shadow: 0 0 10px black;
-    /* display: none; */
+    box-shadow: 0 0 10px white;
+    display: none;
     animation-name: winner-note;
     animation-duration: 1.5s;
     z-index: 1;
 }
 
 @keyframes winner-note {
-    from{
+    from {
         bottom: 40%;
     }
-    to{
+
+    to {
         bottom: 100%;
         opacity: 1;
     }
 }
+
+.draw {
+    height: 100px;
+    width: 280px;
+    border: solid greenyellow 5px;
+    border-radius: 5px;
+    box-shadow: 0 0 20px white;
+    position: absolute;
+    top: 38%;
+    left: 5%;
+    color: white;
+    font-size: 35px;
+    text-align: center;
+    padding-top: 25px;
+    display: none;
+    animation-name: draw-zoom;
+    animation-duration: 2s;
+}
+
+@keyframes draw-zoom {
+    0% {
+        box-shadow: 0 0 20px white;
+    }
+
+    50% {
+        box-shadow: 0 0 60px white;
+    }
+
+    100% {
+        box-shadow: 0 0 20px white;
+    }
+
+}
+
+button {
+    width: 200px;
+    border: solid white 4px;
+    border-radius: 5px;
+    font-size: 30px;
+    color: white;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    text-align: center;
+    padding: 10px;
+    background-color: #242428;
+    box-shadow: 0 0 20px black;
+}
+
+.reset-score {
+    position: fixed;
+    top: 13%;
+    right: 3%;
+}
+
+.new-game {
+    position: fixed;
+    top: 28%;
+    right: 3%;
+}
+
+.head-light{
+    box-shadow: 0 0 25px white;
+} 
