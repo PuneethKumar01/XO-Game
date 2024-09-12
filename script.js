@@ -10,6 +10,10 @@ if (localStorage.getItem('x') == null || localStorage.getItem('o') == null) {
     localStorage.setItem('o', '0');
 }
 
+
+document.querySelector('.x-score').innerText = localStorage.getItem('x');
+document.querySelector('.o-score').innerText = localStorage.getItem('o');
+
 const write = (xo) => {
     array.push(num);
     click.innerText = xo;
@@ -21,7 +25,6 @@ const write = (xo) => {
         click.style.textShadow = ' 0px 0px 15px #1F51FF'
         o.push(num)
     }
-    console.log(array);
 }
 
 let slashLine = document.getElementById('slashLine');
@@ -55,7 +58,7 @@ let btn = document.querySelector('.container').addEventListener('click', (e) => 
     if (!array.includes(num)) {
         if (turn < 9) {
 
-            console.log(x)
+   
 
             if (turn % 2 == 0) {
                 write('X');

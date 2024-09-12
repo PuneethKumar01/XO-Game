@@ -17,7 +17,6 @@ body {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-
 }
 
 .row {
@@ -126,7 +125,7 @@ body {
     justify-content: space-between;
     padding: 0px 100px 0px 100px;
     bottom: 0%;
-
+    z-index: -1;
 }
 
 .player {
@@ -153,6 +152,8 @@ body {
     transform: translateX(-50%);
     width: 100px;
     height: 100px;
+    padding-top: 5px;
+    text-shadow: 0 0 5px white;
     border-radius: 50% 50% 0% 0%;
     position: absolute;
     left: 75px;
@@ -165,4 +166,30 @@ body {
 
 .playerO-color {
     background-color: rgb(70, 179, 223);
+}
+.won{
+    height: 100px;
+    width: 150px;
+    border: solid;
+    position: absolute;
+    bottom: 100%;
+    padding-top: 10px;
+    font-size: 25px;
+    border-radius: 5px;
+    background-color: #242428;
+    box-shadow: 0 0 10px black;
+    /* display: none; */
+    animation-name: winner-note;
+    animation-duration: 1.5s;
+    z-index: 1;
+}
+
+@keyframes winner-note {
+    from{
+        bottom: 40%;
+    }
+    to{
+        bottom: 100%;
+        opacity: 1;
+    }
 }
