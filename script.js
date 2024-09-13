@@ -94,7 +94,9 @@ let btn = document.querySelector('.container').addEventListener('click', (e) => 
                             }
                         }
                     }
-                    playOTurn();
+                    if (matchOn) {
+                        playOTurn();
+                    }
                 } else {
                     write('O');
                     if (turn >= 5) {
@@ -109,7 +111,9 @@ let btn = document.querySelector('.container').addEventListener('click', (e) => 
                             }
                         }
                     }
-                    playXTurn();
+                    if (matchOn) {
+                        playXTurn();
+                    }
                 }
                 turn++;
             }
