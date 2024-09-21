@@ -69,16 +69,31 @@ let playOTurn = () => {
     document.querySelector('#player-o-head').classList.add('head-light')
 }
 
+let randomNumber;
+let bot = [];
+
 let matchOn = true;
 
 playXTurn();
 
 let btn = document.querySelector('.container').addEventListener('click', (e) => {
-    if (matchOn) {
+
+    if(turn == 0){
+        bot = [1,2,3,4,5,6,7,8,9];
+        console.log(`first`)
+    }
+
+    // if (matchOn) {
+        
         click = e.target;
         num = Number(click.getAttribute('id').charAt(3));
+        
+        bot = bot.filter(item => item != num);
+
+        console.log(`x ${num} bot ${bot}`)
+
         if (!array.includes(num)) {
-            if (turn < 9) {
+            if (turn <= 9) {
                 if (turn % 2 == 0) {
                     write('X');
 
@@ -96,8 +111,21 @@ let btn = document.querySelector('.container').addEventListener('click', (e) => 
                     }
                     if (matchOn) {
                         playOTurn();
-                    }
-                } else {
+                    // }
+                } turn++
+                
+
+                do{
+                randomNumber = Math.floor(Math.random() * (bot.length-1) )
+                num = bot[randomNumber]
+                }while(array.includes(num))
+                click = document.querySelector('#box'+bot[randomNumber])
+                
+                bot = bot.filter(item => item != num);
+
+                console.log(`o random ${randomNumber} botnum ${num} all ${array} `)
+
+                 if(turn != 9){
                     write('O');
                     if (turn >= 5) {
                         for (let i = 0; i < 8; i++) {
