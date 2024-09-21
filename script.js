@@ -30,7 +30,7 @@ const write = (xo) => {
         x.push(num)
 
     } else {
-        click.style.textShadow = ' 0px 0px 15px #1F51FF'
+        click.style.textShadow = ' 0px 0px 15px #1F51FF';
         o.push(num)
     }
 }
@@ -130,15 +130,16 @@ let clearBox = () => {
     allBox.forEach((value) => { value.innerText = '' })
     turn = 0;
     array = [];
-    x = []
-    o = []
+    x = [];
+    o = [];
     slashLine.className = '';
     matchOn = true;
     document.getElementById('x-won').style.display = 'none';
     document.getElementById('o-won').style.display = 'none';
     document.getElementById('draw').style.display = 'none';
-    document.querySelector('#player-x-head').classList.remove('head-light')
-    document.querySelector('#player-o-head').classList.remove('head-light')
+    document.querySelector('#player-x-head').classList.remove('head-light');
+    document.querySelector('#player-o-head').classList.remove('head-light');
+    playXTurn();
 }
 
 document.querySelector('.reset-score').addEventListener('click', () => {
